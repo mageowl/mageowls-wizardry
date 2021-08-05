@@ -1,7 +1,7 @@
 package com.seattleowl.items;
 
-import java.util.Properties;
-
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -16,7 +16,8 @@ public class WandItem extends Item {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> list, TooltipFlag flag) {
-
+	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> list, TooltipFlag flags) {
+		super.appendHoverText(stack, level, list, flags);
+		list.add(new TranslatableComponent("message.wand", Integer.toString(10)));
 	}
 }
