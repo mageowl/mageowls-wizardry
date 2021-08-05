@@ -1,4 +1,4 @@
-package com.seattleowl.mageowlswizardry;
+package com.seattleowl.mageowls_wizardry;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 @Mod(MageowlsWizardry.MODID)
 public class MageowlsWizardry {
 
-	public static final String MODID = "mageowlswizardry";
+	public static final String MODID = "mageowls_wizardry";
 
 	// Directly reference a log4j logger.
 	private static final Logger LOGGER = LogManager.getLogger();

@@ -7,7 +7,7 @@ import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import static com.seattleowl.mageowlswizardry.MageowlsWizardry.MODID;
+import static com.seattleowl.mageowls_wizardry.MageowlsWizardry.MODID;
 
 public class Registration {
 
