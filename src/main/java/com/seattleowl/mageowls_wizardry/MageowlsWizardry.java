@@ -1,9 +1,11 @@
 package com.seattleowl.mageowls_wizardry;
 
+import com.seattleowl.setup.ClientSetup;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
@@ -30,7 +32,9 @@ public class MageowlsWizardry {
 	public MageowlsWizardry() {;
 		Registration.init();
 
-		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+		bus.addListener(this::setup);
+		bus.addListener(ClientSetup::setup);
 
 		// Register ourselves for server and other game events we are interested in
 		MinecraftForge.EVENT_BUS.register(this);

@@ -1,0 +1,159 @@
+---- Minecraft Crash Report ----
+// Uh... Did I do that?
+
+Time: 8/5/21, 3:39 PM
+Description: Rendering screen
+
+java.lang.ArithmeticException: / by zero
+	at com.seattleowl.items.WandItem.getDurabilityForDisplay(WandItem.java:41) ~[%2377!:?] {re:classloading}
+	at com.seattleowl.items.WandItem.showDurabilityBar(WandItem.java:51) ~[%2377!:?] {re:classloading}
+	at net.minecraft.client.renderer.entity.ItemRenderer.renderGuiItemDecorations(ItemRenderer.java:338) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.renderSlot(AbstractContainerScreen.java:250) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.render(AbstractContainerScreen.java:109) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.gui.screens.inventory.EffectRenderingInventoryScreen.render(EffectRenderingInventoryScreen.java:47) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen.render(CreativeModeInventoryScreen.java:616) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraftforge.client.ForgeHooksClient.drawScreen(ForgeHooksClient.java:307) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2372%2378!:?] {re:classloading}
+	at net.minecraft.client.renderer.GameRenderer.render(GameRenderer.java:885) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1040) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.run(Minecraft.java:660) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:186) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:runtimedistcleaner:A}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.ForgeClientUserdevLaunchHandler.lambda$launchService$0(ForgeClientUserdevLaunchHandler.java:38) ~[fmlloader-1.17.1-37.0.25.jar%233!:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-9.0.7.jar%238!:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-9.0.7.jar%238!:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-9.0.7.jar%238!:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:106) [modlauncher-9.0.7.jar%238!:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:77) [modlauncher-9.0.7.jar%238!:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-9.0.7.jar%238!:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-9.0.7.jar%238!:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:89) [bootstraplauncher-0.1.16.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at com.seattleowl.items.WandItem.getDurabilityForDisplay(WandItem.java:41) ~[%2377!:?] {re:classloading}
+	at com.seattleowl.items.WandItem.showDurabilityBar(WandItem.java:51) ~[%2377!:?] {re:classloading}
+	at net.minecraft.client.renderer.entity.ItemRenderer.renderGuiItemDecorations(ItemRenderer.java:338) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.renderSlot(AbstractContainerScreen.java:250) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.render(AbstractContainerScreen.java:109) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.gui.screens.inventory.EffectRenderingInventoryScreen.render(EffectRenderingInventoryScreen.java:47) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen.render(CreativeModeInventoryScreen.java:616) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraftforge.client.ForgeHooksClient.drawScreen(ForgeHooksClient.java:307) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2372%2378!:?] {re:classloading}
+-- Screen render details --
+Details:
+	Screen name: net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen
+	Mouse location: Scaled: (213, 120). Absolute: (427.000000, 240.000000)
+	Screen size: Scaled: (427, 240). Absolute: (1708, 960). Scale factor of 4.000000
+
+-- Affected level --
+Details:
+	All players: 1 total; [LocalPlayer['Dev'/143, l='ClientLevel', x=-197.99, y=67.00, z=-114.20]]
+	Chunk stats: 841, 478
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (-196,67,-105), Section: (at 12,3,7 in -13,4,-7; chunk contains blocks -208,0,-112 to -193,255,-97), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+	Level time: 11486 game time, 11486 day time
+	Server brand: forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.ClientLevel.fillReportDetails(ClientLevel.java:364) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.fillReport(Minecraft.java:2245) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.run(Minecraft.java:677) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:186) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:runtimedistcleaner:A}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.ForgeClientUserdevLaunchHandler.lambda$launchService$0(ForgeClientUserdevLaunchHandler.java:38) ~[fmlloader-1.17.1-37.0.25.jar%233!:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-9.0.7.jar%238!:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-9.0.7.jar%238!:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-9.0.7.jar%238!:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:106) [modlauncher-9.0.7.jar%238!:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:77) [modlauncher-9.0.7.jar%238!:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-9.0.7.jar%238!:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-9.0.7.jar%238!:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:89) [bootstraplauncher-0.1.16.jar:?] {}
+
+
+-- Last reload --
+Details:
+	Reload number: 1
+	Reload reason: initial
+	Finished: Yes
+	Packs: Default, Mod Resources
+
+-- System Details --
+Details:
+	Minecraft Version: 1.17.1
+	Minecraft Version ID: 1.17.1
+	Operating System: Mac OS X (x86_64) version 11.4
+	Java Version: 16.0.2, Eclipse Foundation
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Foundation
+	Memory: 751333352 bytes (716 MiB) / 1918894080 bytes (1830 MiB) up to 2147483648 bytes (2048 MiB)
+	CPUs: 4
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Core(TM) i5-7360U CPU @ 2.30GHz
+	Identifier: Intel64 Family 6 Model 142 Stepping 9
+	Microarchitecture: Amber Lake
+	Frequency (GHz): 2.30
+	Number of physical packages: 1
+	Number of physical CPUs: 2
+	Number of logical CPUs: 4
+	Graphics card #0 name: Intel Iris Plus Graphics 640
+	Graphics card #0 vendor: Intel
+	Graphics card #0 VRAM (MB): 1536.00
+	Graphics card #0 deviceId: 0x5926
+	Graphics card #0 versionInfo: Revision ID: 0x0006
+	Memory slot #0 capacity (MB): 4096.00
+	Memory slot #0 clockSpeed (GHz): 2.13
+	Memory slot #0 type: LPDDR3
+	Memory slot #1 capacity (MB): 4096.00
+	Memory slot #1 clockSpeed (GHz): 2.13
+	Memory slot #1 type: LPDDR3
+	Virtual memory max (MB): 12288.00
+	Virtual memory used (MB): 8123.50
+	Swap memory total (MB): 4096.00
+	Swap memory used (MB): 2723.25
+	JVM Flags: 1 total; -Xss1M
+	Launched Version: MOD_DEV
+	Backend library: LWJGL version 3.2.1 SNAPSHOT
+	Backend API: Intel(R) Iris(TM) Plus Graphics 640 GL version 4.1 INTEL-16.4.5, Intel Inc.
+	Window size: 1708x960
+	GL Caps: Using framebuffer using OpenGL 3.2
+	GL debug messages: <disabled>
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'forge'
+	Type: Integrated Server (map_client.txt)
+	Graphics mode: fancy
+	Resource Packs: 
+	Current Language: English (US)
+	CPU: 4x Intel(R) Core(TM) i5-7360U CPU @ 2.30GHz
+	Player Count: 1 / 8; [ServerPlayer['Dev'/143, l='ServerLevel[Test World]', x=-197.99, y=67.00, z=-114.20]]
+	Data Packs: vanilla (incompatible), mod:forge (incompatible), mod:mageowls_wizardry (incompatible)
+	ModLauncher: 9.0.7+91+master.8569cdf
+	ModLauncher launch target: forgeclientuserdev
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		 eventbus PLUGINSERVICE 
+		 object_holder_definalize PLUGINSERVICE 
+		 runtime_enum_extender PLUGINSERVICE 
+		 capability_inject_definalize PLUGINSERVICE 
+		 accesstransformer PLUGINSERVICE 
+		 runtimedistcleaner PLUGINSERVICE 
+		 fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		javafml@null
+	Mod List: 
+		forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp|Minecraft                     |minecraft                     |1.17.1              |DONE      |Manifest: a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		                                                  |Forge                         |forge                         |37.0.25             |DONE      |Manifest: NOSIGNATURE
+		main                                              |MageOwl's Wizardry Mod        |mageowls_wizardry             |0.0NONE             |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: 991f83b8-2e8a-45eb-b210-7d7a26b795e8
+	FML: 37.0
+	Forge: net.minecraftforge:37.0.25

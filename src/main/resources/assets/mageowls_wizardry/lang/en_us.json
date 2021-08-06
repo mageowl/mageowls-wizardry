@@ -1,4 +1,8 @@
 {
 	"item.mageowls_wizardry.wand": "Magic Wand",
-	"message.wand": "Whoo!"
+	"message.current_spell": "Current Spell: %s",
+
+	"item.mageowls_wizardry.magic_crystal": "Magic Crystal",
+
+	"block.mageowls_wizardry.arcane_table": "Arcane Table"
 }

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "mageowls_wizardry:block/arcane_table"
+    }
+  }
+}

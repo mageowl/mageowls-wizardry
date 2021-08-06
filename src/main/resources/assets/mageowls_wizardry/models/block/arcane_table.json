@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "mageowls_wizardry:block/arcane_table_bottom",
+    "up": "mageowls_wizardry:block/arcane_table_top",
+    "north": "mageowls_wizardry:block/arcane_table_north",
+    "south": "mageowls_wizardry:block/arcane_table_south",
+    "east": "mageowls_wizardry:block/arcane_table_east",
+    "west": "mageowls_wizardry:block/arcane_table_west"
+  }
+}

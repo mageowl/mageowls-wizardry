@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  *",
+    " / ",
+    "o  "
+  ],
+  "key": {
+    "*": {
+     "item": "mageowls_wizardry:magic_crystal"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    },
+    "o": {
+      "tag": "forge:nuggets/gold"
+    }
+  },
+  "result": {
+    "item": "mageowls_wizardry:wand"
+  }
+}
