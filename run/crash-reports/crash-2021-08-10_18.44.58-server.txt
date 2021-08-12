@@ -1,0 +1,134 @@
+---- Minecraft Crash Report ----
+// My bad.
+
+Time: 8/10/21, 6:44 PM
+Description: Ticking entity
+
+java.lang.RuntimeException: Slot 1 not in valid range - [0,1)
+	at net.minecraftforge.items.ItemStackHandler.validateSlotIndex(ItemStackHandler.java:221) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2372%2378!:?] {re:classloading}
+	at net.minecraftforge.items.ItemStackHandler.getStackInSlot(ItemStackHandler.java:73) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2372%2378!:?] {re:classloading}
+	at net.minecraftforge.items.SlotItemHandler.getItem(SlotItemHandler.java:54) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2372%2378!:?] {re:classloading}
+	at net.minecraft.world.inventory.AbstractContainerMenu.broadcastChanges(AbstractContainerMenu.java:161) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading}
+	at net.minecraft.server.level.ServerPlayer.tick(ServerPlayer.java:399) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.tickNonPassenger(ServerLevel.java:623) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.level.Level.guardEntityTick(Level.java:470) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.lambda$tick$5(ServerLevel.java:384) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.level.entity.EntityTickList.forEach(EntityTickList.java:54) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading}
+	at net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:365) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:882) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:818) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:85) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:683) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:258) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:831) [?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at net.minecraftforge.items.ItemStackHandler.validateSlotIndex(ItemStackHandler.java:221) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2372%2378!:?] {re:classloading}
+	at net.minecraftforge.items.ItemStackHandler.getStackInSlot(ItemStackHandler.java:73) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2372%2378!:?] {re:classloading}
+	at net.minecraftforge.items.SlotItemHandler.getItem(SlotItemHandler.java:54) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2372%2378!:?] {re:classloading}
+	at net.minecraft.world.inventory.AbstractContainerMenu.broadcastChanges(AbstractContainerMenu.java:161) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading}
+	at net.minecraft.server.level.ServerPlayer.tick(ServerPlayer.java:399) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.tickNonPassenger(ServerLevel.java:623) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B}
+-- Entity being ticked --
+Details:
+	Entity Type: minecraft:player (net.minecraft.server.level.ServerPlayer)
+	Entity ID: 142
+	Entity Name: Dev
+	Entity's Exact location: -192.94, 67.00, -117.67
+	Entity's Block location: World: (-193,67,-118), Section: (at 15,3,10 in -13,4,-8; chunk contains blocks -208,0,-128 to -193,255,-113), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+	Entity's Momentum: 0.00, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: null
+Stacktrace:
+	at net.minecraft.world.level.Level.guardEntityTick(Level.java:470) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.lambda$tick$5(ServerLevel.java:384) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.level.entity.EntityTickList.forEach(EntityTickList.java:54) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading}
+	at net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:365) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B}
+
+
+-- Affected level --
+Details:
+	All players: 1 total; [ServerPlayer['Dev'/142, l='ServerLevel[Test World]', x=-192.94, y=67.00, z=-117.67]]
+	Chunk stats: 2115
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (-196,67,-105), Section: (at 12,3,7 in -13,4,-7; chunk contains blocks -208,0,-112 to -193,255,-97), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+	Level time: 79328 game time, 5798 day time
+	Level name: Test World
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+	Level weather: Rain time: 1 (now: false), thunder time: 1 (now: false)
+	Known server brands: forge
+	Level was modded: true
+	Level storage version: 0x04ABD - Anvil
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:882) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:818) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:85) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:683) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:258) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:831) [?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.17.1
+	Minecraft Version ID: 1.17.1
+	Operating System: Mac OS X (x86_64) version 11.4
+	Java Version: 16.0.2, Eclipse Foundation
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Foundation
+	Memory: 1488759296 bytes (1419 MiB) / 2147483648 bytes (2048 MiB) up to 2147483648 bytes (2048 MiB)
+	CPUs: 4
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Core(TM) i5-7360U CPU @ 2.30GHz
+	Identifier: Intel64 Family 6 Model 142 Stepping 9
+	Microarchitecture: Amber Lake
+	Frequency (GHz): 2.30
+	Number of physical packages: 1
+	Number of physical CPUs: 2
+	Number of logical CPUs: 4
+	Graphics card #0 name: Intel Iris Plus Graphics 640
+	Graphics card #0 vendor: Intel
+	Graphics card #0 VRAM (MB): 1536.00
+	Graphics card #0 deviceId: 0x5926
+	Graphics card #0 versionInfo: Revision ID: 0x0006
+	Memory slot #0 capacity (MB): 4096.00
+	Memory slot #0 clockSpeed (GHz): 2.13
+	Memory slot #0 type: LPDDR3
+	Memory slot #1 capacity (MB): 4096.00
+	Memory slot #1 clockSpeed (GHz): 2.13
+	Memory slot #1 type: LPDDR3
+	Virtual memory max (MB): 11264.00
+	Virtual memory used (MB): 8070.62
+	Swap memory total (MB): 3072.00
+	Swap memory used (MB): 2094.75
+	JVM Flags: 1 total; -Xss1M
+	Player Count: 1 / 8; [ServerPlayer['Dev'/142, l='ServerLevel[Test World]', x=-192.94, y=67.00, z=-117.67]]
+	Data Packs: vanilla (incompatible), mod:forge (incompatible), mod:mageowls_wizardry (incompatible)
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'forge'
+	ModLauncher: 9.0.7+91+master.8569cdf
+	ModLauncher launch target: forgeclientuserdev
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		 eventbus PLUGINSERVICE 
+		 object_holder_definalize PLUGINSERVICE 
+		 runtime_enum_extender PLUGINSERVICE 
+		 capability_inject_definalize PLUGINSERVICE 
+		 accesstransformer PLUGINSERVICE 
+		 runtimedistcleaner PLUGINSERVICE 
+		 fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		javafml@null
+	Mod List: 
+		forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp|Minecraft                     |minecraft                     |1.17.1              |DONE      |Manifest: a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		                                                  |Forge                         |forge                         |37.0.25             |DONE      |Manifest: NOSIGNATURE
+		main                                              |MageOwl's Wizardry Mod        |mageowls_wizardry             |0.0NONE             |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: cd6b5415-a868-48b3-8750-e7a84e10a3e6
+	FML: 37.0
+	Forge: net.minecraftforge:37.0.25

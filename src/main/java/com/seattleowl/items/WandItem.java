@@ -55,7 +55,6 @@ public class WandItem extends Item {
 		return getMana(stack) > 0;
 	}
 
-	@OnlyIn(Dist.CLIENT)
 	public double getDurabilityForDisplay(ItemStack stack) {
 		int mana = getMana(stack);
 		int maxMana = getMaxMana(stack);
@@ -63,12 +62,10 @@ public class WandItem extends Item {
 		return 1 - manaPercent;
 	}
 
-	@OnlyIn(Dist.CLIENT)
 	public int getRGBDurabilityForDisplay(ItemStack _stack) {
 		return 0x007357a6;
 	}
 
-	@OnlyIn(Dist.CLIENT)
 	public boolean showDurabilityBar(ItemStack stack) {
 		return getMana(stack) < getMaxMana(stack);
 	}
