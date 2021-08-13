@@ -1,0 +1,12 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mageowls_wizardry:magic_crystal"
+    }
+  ],
+  "result": {
+    "item": "mageowls_wizardry:magic_dust",
+    "count": 5
+  }
+}

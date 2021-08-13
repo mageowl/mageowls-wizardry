@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mageowls_wizardry:item/spell_book"
+  }
+}

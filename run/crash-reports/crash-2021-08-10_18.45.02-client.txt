@@ -10,7 +10,7 @@ java.lang.RuntimeException: Slot 1 not in valid range - [0,1)
 	at net.minecraftforge.items.SlotItemHandler.getItem(SlotItemHandler.java:54) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2372%2378!:?] {re:classloading}
 	at net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.renderSlot(AbstractContainerScreen.java:203) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:runtimedistcleaner:A}
 	at net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.render(AbstractContainerScreen.java:109) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:runtimedistcleaner:A}
-	at com.seattleowl.blocks.ArcaneTableScreen.render(ArcaneTableScreen.java:28) ~[%2377!:?] {re:classloading}
+	at com.seattleowl.mageowls_wizardry.blocks.ArcaneTableScreen.render(ArcaneTableScreen.java:28) ~[%2377!:?] {re:classloading}
 	at net.minecraftforge.client.ForgeHooksClient.drawScreen(ForgeHooksClient.java:307) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2372%2378!:?] {re:classloading}
 	at net.minecraft.client.renderer.GameRenderer.render(GameRenderer.java:885) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
 	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1040) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
@@ -42,11 +42,11 @@ Stacktrace:
 	at net.minecraftforge.items.SlotItemHandler.getItem(SlotItemHandler.java:54) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2372%2378!:?] {re:classloading}
 	at net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.renderSlot(AbstractContainerScreen.java:203) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:runtimedistcleaner:A}
 	at net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.render(AbstractContainerScreen.java:109) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:runtimedistcleaner:A}
-	at com.seattleowl.blocks.ArcaneTableScreen.render(ArcaneTableScreen.java:28) ~[%2377!:?] {re:classloading}
+	at com.seattleowl.mageowls_wizardry.blocks.ArcaneTableScreen.render(ArcaneTableScreen.java:28) ~[%2377!:?] {re:classloading}
 	at net.minecraftforge.client.ForgeHooksClient.drawScreen(ForgeHooksClient.java:307) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2372%2378!:?] {re:classloading}
 -- Screen render details --
 Details:
-	Screen name: com.seattleowl.blocks.ArcaneTableScreen
+	Screen name: com.seattleowl.mageowls_wizardry.blocks.ArcaneTableScreen
 	Mouse location: Scaled: (206, 120). Absolute: (720.000000, 423.000000)
 	Screen size: Scaled: (412, 242). Absolute: (2880, 1694). Scale factor of 7.000000
 

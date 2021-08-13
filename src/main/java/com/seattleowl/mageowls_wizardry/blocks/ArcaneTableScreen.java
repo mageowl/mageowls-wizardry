@@ -1,4 +1,4 @@
-package com.seattleowl.blocks;
+package com.seattleowl.mageowls_wizardry.blocks;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;

@@ -1,7 +1,11 @@
-package com.seattleowl.items;
+package com.seattleowl.mageowls_wizardry.items;
 
 import net.minecraft.ChatFormatting;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.StringTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -11,8 +15,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -28,16 +30,28 @@ public class WandItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> list, TooltipFlag flags) {
 		super.appendHoverText(stack, level, list, flags);
-		int spellIndex = stack.hasTag() ? stack.getTag().getInt("spell") : 0;
-		list.add(new TranslatableComponent("message.current_spell", Integer.toString(spellIndex)).withStyle(ChatFormatting.GRAY));
+		list.add(
+			new TranslatableComponent(
+				"message.mageowls_wizardry.mana", getMana(stack) + " / " + getMaxMana(stack)
+			).withStyle(ChatFormatting.GRAY)
+		);
+
+		ListTag spells = stack.getOrCreateTag().getList("spells", Tag.TAG_STRING);
+		for (int i = 0; i < 5; i++) {
+			String spellID = spells.getString(i);
+			list.add(
+				new TextComponent(" " + "" + " ").append(new TranslatableComponent("spell." + spellID))
+			);
+		}
 	}
 
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
 		ItemStack stack = player.getItemInHand(hand);
-		int spellIndex = stack.getOrCreateTag().getInt("spell");
-		spellIndex = (spellIndex + 1) % 5;
-		stack.getTag().putInt("spell", spellIndex);
+//		int spellIndex = stack.getOrCreateTag().getInt("spell");
+//		spellIndex = (spellIndex + 1) % 5;
+//		stack.getTag().putInt("spell", spellIndex);
+		// TODO: Cast spell
 		return super.use(level, player, hand);
 	}
 
@@ -55,6 +69,12 @@ public class WandItem extends Item {
 		return getMana(stack) > 0;
 	}
 
+	public int addMana(ItemStack stack, int mana) {
+		int sum = getMana(stack) + mana;
+		stack.getOrCreateTag().putInt("mana", sum);
+		return sum - getMana(stack);
+	}
+
 	public double getDurabilityForDisplay(ItemStack stack) {
 		int mana = getMana(stack);
 		int maxMana = getMaxMana(stack);
@@ -68,5 +88,9 @@ public class WandItem extends Item {
 
 	public boolean showDurabilityBar(ItemStack stack) {
 		return getMana(stack) < getMaxMana(stack);
+	}
+
+	public void applySpell(ItemStack stack, String spellID, int slot) {
+		stack.getOrCreateTag().getList("spells", Tag.TAG_STRING).set(slot, StringTag.valueOf(spellID));
 	}
 }

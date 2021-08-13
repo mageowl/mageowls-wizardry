@@ -1,6 +1,6 @@
-package com.seattleowl.setup;
+package com.seattleowl.mageowls_wizardry.setup;
 
-import com.seattleowl.blocks.ArcaneTableScreen;
+import com.seattleowl.mageowls_wizardry.blocks.ArcaneTableScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 

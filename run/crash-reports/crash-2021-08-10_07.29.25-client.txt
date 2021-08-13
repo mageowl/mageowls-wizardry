@@ -5,7 +5,7 @@ Time: 8/10/21, 7:29 AM
 Description: Container click
 
 java.lang.NullPointerException: Cannot invoke "net.minecraft.tags.Tag.contains(Object)" because the return value of "net.minecraft.tags.TagCollection.getTag(net.minecraft.resources.ResourceLocation)" is null
-	at com.seattleowl.blocks.ArcaneTableBlockEntity$2.isItemValid(ArcaneTableBlockEntity.java:67) ~[%2377!:?] {re:classloading}
+	at com.seattleowl.mageowls_wizardry.blocks.ArcaneTableBlockEntity$2.isItemValid(ArcaneTableBlockEntity.java:67) ~[%2377!:?] {re:classloading}
 	at net.minecraftforge.items.SlotItemHandler.mayPlace(SlotItemHandler.java:47) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2372%2378!:?] {re:classloading}
 	at net.minecraft.world.inventory.Slot.safeInsert(Slot.java:157) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading}
 	at net.minecraft.world.inventory.AbstractContainerMenu.doClick(AbstractContainerMenu.java:399) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading}
@@ -48,14 +48,14 @@ A detailed walkthrough of the error, its code path and all known details is as f
 -- Head --
 Thread: Render thread
 Stacktrace:
-	at com.seattleowl.blocks.ArcaneTableBlockEntity$2.isItemValid(ArcaneTableBlockEntity.java:67) ~[%2377!:?] {re:classloading}
+	at com.seattleowl.mageowls_wizardry.blocks.ArcaneTableBlockEntity$2.isItemValid(ArcaneTableBlockEntity.java:67) ~[%2377!:?] {re:classloading}
 	at net.minecraftforge.items.SlotItemHandler.mayPlace(SlotItemHandler.java:47) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2372%2378!:?] {re:classloading}
 	at net.minecraft.world.inventory.Slot.safeInsert(Slot.java:157) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading}
 	at net.minecraft.world.inventory.AbstractContainerMenu.doClick(AbstractContainerMenu.java:399) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading}
 -- Click info --
 Details:
 	Menu Type: mageowls_wizardry:arcane_table
-	Menu Class: com.seattleowl.blocks.ArcaneTableContainer
+	Menu Class: com.seattleowl.mageowls_wizardry.blocks.ArcaneTableContainer
 	Slot Count: 37
 	Slot: 0
 	Button: 0
@@ -70,7 +70,7 @@ Stacktrace:
 
 -- Affected screen --
 Details:
-	Screen name: com.seattleowl.blocks.ArcaneTableScreen
+	Screen name: com.seattleowl.mageowls_wizardry.blocks.ArcaneTableScreen
 Stacktrace:
 	at net.minecraft.client.gui.screens.Screen.wrapScreenError(Screen.java:496) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
 	at net.minecraft.client.MouseHandler.onPress(MouseHandler.java:91) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:runtimedistcleaner:A}

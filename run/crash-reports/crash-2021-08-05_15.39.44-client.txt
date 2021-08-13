@@ -5,8 +5,8 @@ Time: 8/5/21, 3:39 PM
 Description: Rendering screen
 
 java.lang.ArithmeticException: / by zero
-	at com.seattleowl.items.WandItem.getDurabilityForDisplay(WandItem.java:41) ~[%2377!:?] {re:classloading}
-	at com.seattleowl.items.WandItem.showDurabilityBar(WandItem.java:51) ~[%2377!:?] {re:classloading}
+	at com.seattleowl.mageowls_wizardry.items.WandItem.getDurabilityForDisplay(WandItem.java:41) ~[%2377!:?] {re:classloading}
+	at com.seattleowl.mageowls_wizardry.items.WandItem.showDurabilityBar(WandItem.java:51) ~[%2377!:?] {re:classloading}
 	at net.minecraft.client.renderer.entity.ItemRenderer.renderGuiItemDecorations(ItemRenderer.java:338) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
 	at net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.renderSlot(AbstractContainerScreen.java:250) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:runtimedistcleaner:A}
 	at net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.render(AbstractContainerScreen.java:109) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:runtimedistcleaner:A}
@@ -38,8 +38,8 @@ A detailed walkthrough of the error, its code path and all known details is as f
 -- Head --
 Thread: Render thread
 Stacktrace:
-	at com.seattleowl.items.WandItem.getDurabilityForDisplay(WandItem.java:41) ~[%2377!:?] {re:classloading}
-	at com.seattleowl.items.WandItem.showDurabilityBar(WandItem.java:51) ~[%2377!:?] {re:classloading}
+	at com.seattleowl.mageowls_wizardry.items.WandItem.getDurabilityForDisplay(WandItem.java:41) ~[%2377!:?] {re:classloading}
+	at com.seattleowl.mageowls_wizardry.items.WandItem.showDurabilityBar(WandItem.java:51) ~[%2377!:?] {re:classloading}
 	at net.minecraft.client.renderer.entity.ItemRenderer.renderGuiItemDecorations(ItemRenderer.java:338) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
 	at net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.renderSlot(AbstractContainerScreen.java:250) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:runtimedistcleaner:A}
 	at net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.render(AbstractContainerScreen.java:109) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading,pl:runtimedistcleaner:A}

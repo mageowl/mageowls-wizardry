@@ -1,9 +1,13 @@
 {
 	"item.mageowls_wizardry.wand": "Magic Wand",
-	"message.current_spell": "Current Spell: %s",
-
 	"item.mageowls_wizardry.magic_crystal": "Magic Crystal",
+	"item.mageowls_wizardry.magic_dust": "Magic Dust",
+	"item.mageowls_wizardry.spell_book":  "Spell Book",
 
 	"block.mageowls_wizardry.arcane_table": "Arcane Table",
-	"screen.mageowls_wizardry.arcane_table": "Arcane Table"
+
+	"message.mageowls_wizardry.mana": "%s Mana",
+
+	"screen.mageowls_wizardry.arcane_table": "Arcane Table",
+	"itemGroup.spell_tab": "Spells"
 }

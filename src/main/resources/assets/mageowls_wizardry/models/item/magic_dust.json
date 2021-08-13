@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "mageowls_wizardry:item/magic_dust"
+  }
+}

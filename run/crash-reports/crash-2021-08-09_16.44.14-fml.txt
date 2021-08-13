@@ -82,7 +82,7 @@ Stacktrace:
 	at net.minecraft.resources.ResourceLocation.<init>(ResourceLocation.java:37) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading}
 	at net.minecraft.resources.ResourceLocation.<init>(ResourceLocation.java:46) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2373!:?] {re:classloading}
 	at net.minecraftforge.registries.DeferredRegister.register(DeferredRegister.java:111) ~[forge-1.17.1-37.0.25_mapped_official_1.17.1-recomp.jar%2372%2378!:?] {re:classloading}
-	at com.seattleowl.setup.Registration.<clinit>(Registration.java:58) ~[%2377!:?] {re:classloading}
+	at com.seattleowl.mageowls_wizardry.setup.Registration.<clinit>(Registration.java:58) ~[%2377!:?] {re:classloading}
 	at com.seattleowl.mageowls_wizardry.MageowlsWizardry.<init>(MageowlsWizardry.java:33) ~[%2377!:?] {re:classloading}
 	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?] {}
 	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78) ~[?:?] {}
