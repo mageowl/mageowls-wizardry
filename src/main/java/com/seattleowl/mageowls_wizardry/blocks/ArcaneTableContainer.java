@@ -28,7 +28,6 @@ public class ArcaneTableContainer extends AbstractContainerMenu {
     private final Level world;
 
     private final ItemStackHandler wandSlot = createWandHandler();
-    private final ItemStackHandler manaFuelSlot = createManaFuelHandler();
     private final ItemStackHandler spellSlots = createSpellsHandler();
     private final ItemStackHandler wandOutputSlot = new ItemStackHandler(1);
     private final ItemStackHandler outputDisplaySlot = createOutputHandler(wandOutputSlot);
@@ -48,24 +47,6 @@ public class ArcaneTableContainer extends AbstractContainerMenu {
             @Override
             public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
                 return stack.getItem() instanceof WandItem;
-            }
-        };
-    }
-
-    private ItemStackHandler createManaFuelHandler() {
-        return new ItemStackHandler(1) {
-            @Override
-            protected void onContentsChanged(int slot) {
-                updateOutput();
-            }
-
-            @Override
-            public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
-                return ItemTags
-                        .getAllTags()
-                        .getTag(
-                                new ResourceLocation(MageowlsWizardry.MODID, "mana_fuel")).contains(stack.getItem()
-                        );
             }
         };
     }
@@ -110,7 +91,6 @@ public class ArcaneTableContainer extends AbstractContainerMenu {
             public ItemStack extractItem(int slot, int amount, boolean simulate) {
                 extractingOutput = true;
                 wandSlot.extractItem(0, 1, false);
-                manaFuelSlot.extractItem(0, manaConsumption, false);
                 extractingOutput = false;
                 return internalSlot.extractItem(slot, amount, simulate);
             }
@@ -125,23 +105,6 @@ public class ArcaneTableContainer extends AbstractContainerMenu {
 
             ItemStack wandStack = wandOutputSlot.getStackInSlot(0);
             WandItem wandItem = (WandItem) wandStack.getItem();
-
-            // Add Mana
-            boolean didAddMana = true;
-            int manaCount = manaFuelSlot.getStackInSlot(0).getCount();
-            while (didAddMana) {
-                didAddMana = false;
-                // If there's some source of mana
-                if (manaConsumption < manaCount) {
-                    // And the wand does not have max mana
-                    if (wandItem.getMana(wandStack) < wandItem.getMaxMana(wandStack)) {
-                        // Give it more mana
-                        wandItem.addMana(wandStack, 20);
-                        didAddMana = true;
-                        manaConsumption++;
-                    }
-                }
-            }
 
             // Apply spells
             // For each spell
@@ -169,13 +132,12 @@ public class ArcaneTableContainer extends AbstractContainerMenu {
         world = level;
 
         addSlot(new SlotItemHandler(wandSlot, 0, 48, 37));
-        addSlot(new SlotItemHandler(manaFuelSlot, 0, 104, 7));
         addSlot(new SlotItemHandler(spellSlots, 0, 48, 10));
         addSlot(new SlotItemHandler(spellSlots, 1, 75, 28));
         addSlot(new SlotItemHandler(spellSlots, 2, 67, 60));
         addSlot(new SlotItemHandler(spellSlots, 3, 30, 60));
         addSlot(new SlotItemHandler(spellSlots, 4, 21, 28));
-        addSlot(new SlotItemHandler(outputDisplaySlot, 0, 138, 56));
+        addSlot(new SlotItemHandler(outputDisplaySlot, 0, 138, 37));
 
         layoutPlayerInventorySlots(8, 91);
     }
@@ -216,7 +178,6 @@ public class ArcaneTableContainer extends AbstractContainerMenu {
 
         if (!player.isAlive() || player instanceof ServerPlayer && ((ServerPlayer)player).hasDisconnected()) {
             player.drop(wandSlot.getStackInSlot(0), false);
-            player.drop(manaFuelSlot.getStackInSlot(0), false);
             for (int i = 0; i < 5; i++) {
                 player.drop(spellSlots.getStackInSlot(i), false);
             }
@@ -225,7 +186,6 @@ public class ArcaneTableContainer extends AbstractContainerMenu {
             if (player instanceof ServerPlayer) {
                 Inventory inventory = player.getInventory();
                 inventory.placeItemBackInInventory(wandSlot.getStackInSlot(0));
-                inventory.placeItemBackInInventory(manaFuelSlot.getStackInSlot(0));
                 for (int i = 0; i < 5; i++) {
                     inventory.placeItemBackInInventory(spellSlots.getStackInSlot(i));
                 }

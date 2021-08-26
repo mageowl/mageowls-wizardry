@@ -1,10 +1,12 @@
 package com.seattleowl.mageowls_wizardry.tabs;
 
 import com.seattleowl.mageowls_wizardry.setup.Registration;
+import com.seattleowl.mageowls_wizardry.tools.SpellRegister;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+
+import java.util.Set;
 
 public class SpellTab extends CreativeModeTab {
     public SpellTab() {
@@ -24,8 +26,12 @@ public class SpellTab extends CreativeModeTab {
 
     @Override
     public void fillItemList(NonNullList<ItemStack> items) {
-        items.add(createSpellBook("magic_missile"));
-        items.add(createSpellBook("ignite"));
+        Set<String> spells = SpellRegister.updateGlobalSpells().keySet();
+
+        for (String spell: spells) {
+            items.add(createSpellBook(spell));
+        }
+
         super.fillItemList(items);
     }
 }

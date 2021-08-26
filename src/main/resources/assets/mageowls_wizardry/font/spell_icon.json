@@ -1,0 +1,40 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "mageowls_wizardry:font/spell_icons/none.png",
+      "ascent": 7,
+      "chars": ["\u2B50"]
+    },
+    {
+      "type": "bitmap",
+      "file": "mageowls_wizardry:textures/font/spell_icons/fire.png",
+      "ascent": 7,
+      "chars": ["\uD83D"]
+    },
+    {
+      "type": "bitmap",
+      "file": "mageowls_wizardry:textures/font/spell_icons/sun.png",
+      "ascent": 7,
+      "chars": ["\u2600"]
+    },
+    {
+      "type": "bitmap",
+      "file": "mageowls_wizardry:textures/font/spell_icons/water.png",
+      "ascent": 7,
+      "chars": ["\uDF0A"]
+    },
+    {
+      "type": "bitmap",
+      "file": "mageowls_wizardry:textures/font/spell_icons/earth.png",
+      "ascent": 7,
+      "chars": ["\uD83E"]
+    },
+    {
+      "type": "bitmap",
+      "file": "mageowls_wizardry:textures/font/spell_icons/moon.png",
+      "ascent": 7,
+      "chars": ["\uD83C"]
+    }
+  ]
+}

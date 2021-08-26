@@ -5,8 +5,11 @@ import com.seattleowl.mageowls_wizardry.blocks.ArcaneTableContainer;
 import com.seattleowl.mageowls_wizardry.items.SpellItem;
 import com.seattleowl.mageowls_wizardry.items.WandItem;
 import com.seattleowl.mageowls_wizardry.tabs.SpellTab;
+import com.seattleowl.mageowls_wizardry.tools.Spell;
+import com.seattleowl.mageowls_wizardry.tools.SpellRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.inventory.MenuType;
+import com.seattleowl.mageowls_wizardry.spells.MagicMissile;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -19,6 +22,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryBuilder;
 
 import static com.seattleowl.mageowls_wizardry.MageowlsWizardry.MODID;
 
@@ -28,6 +32,7 @@ public class Registration {
 	private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
 	private static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, MODID);
 	private static final DeferredRegister<MenuType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries.CONTAINERS, MODID);
+	private static final SpellRegister SPELLS = new SpellRegister(MODID);
 
 	private static final SpellTab SPELL_TAB = new SpellTab();
 
@@ -64,4 +69,6 @@ public class Registration {
 	public static final RegistryObject<SpellItem> SPELL_BOOK = ITEMS.register("spell_book", () ->
 		new SpellItem(new Item.Properties())
 	);
+
+	public static final SpellRegister.RegisteredSpell MAGIC_MISSILE = SPELLS.register("magic_missile", new MagicMissile());
 }

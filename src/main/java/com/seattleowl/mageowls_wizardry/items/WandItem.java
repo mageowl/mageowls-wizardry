@@ -1,5 +1,7 @@
 package com.seattleowl.mageowls_wizardry.items;
 
+import com.seattleowl.mageowls_wizardry.tools.Spell;
+import com.seattleowl.mageowls_wizardry.tools.SpellRegister;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.StringTag;
@@ -30,67 +32,55 @@ public class WandItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> list, TooltipFlag flags) {
 		super.appendHoverText(stack, level, list, flags);
-		list.add(
-			new TranslatableComponent(
-				"message.mageowls_wizardry.mana", getMana(stack) + " / " + getMaxMana(stack)
-			).withStyle(ChatFormatting.GRAY)
-		);
 
 		ListTag spells = stack.getOrCreateTag().getList("spells", Tag.TAG_STRING);
+		boolean addSpells = spells.size() == 0;
 		for (int i = 0; i < 5; i++) {
+			if (addSpells) {
+				spells.add(StringTag.valueOf("none"));
+			}
+
 			String spellID = spells.getString(i);
-			list.add(
-				new TextComponent(" " + "" + " ").append(new TranslatableComponent("spell." + spellID))
-			);
+			if (!spellID.equals("none")) {
+
+				SpellRegister.RegisteredSpell registeredSpell = SpellRegister.get(spellID);
+				Spell spell = registeredSpell.spell;
+
+				list.add(
+						new TextComponent("[" + spell.element.icon + "] ").withStyle(spell.element.formatting).append(
+								new TranslatableComponent(
+										"spell." + registeredSpell.modID + "." + registeredSpell.name
+								)
+						)
+				);
+			} else {
+				list.add(
+					new TextComponent("[  ] Empty Slot").withStyle(ChatFormatting.GRAY)
+				);
+			}
 		}
 	}
 
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
 		ItemStack stack = player.getItemInHand(hand);
-//		int spellIndex = stack.getOrCreateTag().getInt("spell");
-//		spellIndex = (spellIndex + 1) % 5;
-//		stack.getTag().putInt("spell", spellIndex);
 		// TODO: Cast spell
 		return super.use(level, player, hand);
 	}
 
-	public int getMana(ItemStack stack) {
-		return Math.min(stack.getOrCreateTag().getInt("mana"), getMaxMana(stack));
-	}
-
-	public int getMaxMana(ItemStack stack) {
-		return stack.hasTag() && stack.getTag().getInt("max_mana") > 0 ?
-				stack.getTag().getInt("max_mana") :
-				maxMana;
-	}
-
-	public boolean hasMana(ItemStack stack) {
-		return getMana(stack) > 0;
-	}
-
-	public int addMana(ItemStack stack, int mana) {
-		int sum = getMana(stack) + mana;
-		stack.getOrCreateTag().putInt("mana", sum);
-		return sum - getMana(stack);
-	}
-
-	public double getDurabilityForDisplay(ItemStack stack) {
-		int mana = getMana(stack);
-		int maxMana = getMaxMana(stack);
-		double manaPercent = ((double) mana / (double) maxMana);
-		return 1 - manaPercent;
-	}
-
-	public int getRGBDurabilityForDisplay(ItemStack _stack) {
-		return 0x007357a6;
-	}
-
-	public boolean showDurabilityBar(ItemStack stack) {
-		return getMana(stack) < getMaxMana(stack);
-	}
-
 	public void applySpell(ItemStack stack, String spellID, int slot) {
-		stack.getOrCreateTag().getList("spells", Tag.TAG_STRING).set(slot, StringTag.valueOf(spellID));
+		ListTag spells = stack.getOrCreateTag().getList("spells", Tag.TAG_STRING);
+		StringTag spellIDTag = StringTag.valueOf(spellID);
+
+		if (spells.size() == 0) {
+			spells.add(StringTag.valueOf("none"));
+			spells.add(StringTag.valueOf("none"));
+			spells.add(StringTag.valueOf("none"));
+			spells.add(StringTag.valueOf("none"));
+			spells.add(StringTag.valueOf("none"));
+		}
+
+		spells.set(slot, spellIDTag);
+		stack.getTag().put("spells", spells);
 	}
 }

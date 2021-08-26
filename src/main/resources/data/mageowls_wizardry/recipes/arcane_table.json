@@ -1,0 +1,17 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    " _ ",
+    "*X*",
+    "###"
+  ],
+  "key": {
+    "_": {"item": "minecraft:red_carpet"},
+    "*": {"item": "mageowls_wizardry:magic_crystal"},
+    "X": {"item": "minecraft:chiseled_deepslate"},
+    "#": {"item": "minecraft:cobbled_deepslate"}
+  },
+  "result": {
+    "item": "mageowls_wizardry:arcane_table"
+  }
+}

@@ -9,5 +9,7 @@
 	"message.mageowls_wizardry.mana": "%s Mana",
 
 	"screen.mageowls_wizardry.arcane_table": "Arcane Table",
-	"itemGroup.spell_tab": "Spells"
+	"itemGroup.spell_tab": "Spells",
+
+	"spell.mageowls_wizardry.magic_missile": "Magic Missile"
 }
